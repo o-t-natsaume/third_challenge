@@ -1,0 +1,11 @@
+<launch>
+    <arg name="goal_dist" default="1.0">
+    <arg name="velocity" default="0.1">
+
+    <node pkg="first_challenge" exec="first_challenge_node" name="first_challenge_node">
+        <param name="goal_dist" value="$(var goal_dist)">
+        <param name="velocity" value="$(var verocity)">
+    </node>
+
+    <include file="$(find-pkg-share roomba_500driver_meiji)/launch/roomba.launch.py" />
+</launch>
